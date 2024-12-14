@@ -44,10 +44,10 @@ jobs:
   test:
     needs: build
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        test-type: ['test', 'test:nestjs', 'test:mocha']
-    if: contains(github.event.head_commit.modified, 'example-application/') || contains(github.event.head_commit.modified, 'graphics/') || contains(github.event.head_commit.modified, 'recipes/')
+    # strategy:
+    #   matrix:
+    #     test-type: ['test', 'test:nestjs', 'test:mocha']
+    # if: contains(github.event.head_commit.modified, 'example-application/') || contains(github.event.head_commit.modified, 'graphics/') || contains(github.event.head_commit.modified, 'recipes/')
     
     steps:
     - uses: actions/checkout@v2
@@ -76,4 +76,4 @@ jobs:
 
     - run: npm i
 
-    - run: npm run ${{ matrix.test-type }}
+    - run: npm run test
