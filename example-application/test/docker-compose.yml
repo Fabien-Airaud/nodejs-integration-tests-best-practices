@@ -12,7 +12,7 @@ services:
       - '54310:5432'
     tmpfs: /var/lib/postgresql/data
   messageQueue:
-    image: rabbitmq:3-management-alpine
+    image: sha256:c691b282f98d62beea4b1fb293c8b12c76208a489c3656c234c8a865043e8249
     container_name: 'rabbitmq'
     ports:
       - 5672:5672
